@@ -1,0 +1,117 @@
+.page-3 {
+    img {
+        position: absolute;
+    }
+    .title-warp {
+        position: absolute;
+        left: 50%;
+        top: 1rem;
+        width: 6.67rem;
+        transform: translate3d(-50%, 0, 0);
+        .box {
+            position: static;
+            width: 100%;
+        }
+        .t-1 {
+            top: .3rem;
+            left: .3rem;
+            width: 5.71rem;
+            opacity: 0;
+            transform: translate3d(5rem, 0, 0);
+        }
+        .t-2-box {
+            position: absolute;
+            bottom: 2.1rem;
+            left: .9rem;
+            opacity: 0;
+            transition-delay: .3s;
+            .t-label {
+                top: .3rem;
+                left: -.4rem;
+                width: .32rem;
+            }
+            .t-2 {
+                top: 0;
+                left: 0;
+                width: 4.19rem;
+            }
+        }
+        .t-3-box {
+            position: absolute;
+            bottom: 0;
+            left: .5rem;
+            opacity: 0;
+            transition-delay: 1s;
+            .t-label {
+                top: -1.27rem;
+                left: -.05rem;
+                width: .42rem;
+            }      
+            .t-3 {
+                bottom: .9rem;
+                left: .45rem;
+                width: 4.64rem;
+            }
+        }
+    }
+    .person-box {
+        position: absolute;
+        bottom: 1.3rem;
+        width: 100%;
+        opacity: 0;
+        transform: translate3d(0, 6rem, 0);
+        .p {
+            position: static;
+            margin-left: 1.5rem;
+            width: 5.22rem;
+        }
+        .f-1 {
+            left: 1.4rem;
+            top: .9rem;        
+            width: .32rem;
+            opacity: 0;
+            transition-delay: .7s + .5 * 0;
+        }
+        .f-2 {
+            right: 1.2rem;
+            top: 1.3rem;
+            width: .11rem;
+            opacity: 0;
+            transition-delay: .7s + .5 * 1;
+        }
+        .f-3 {
+            right: .7rem;
+            top: 1.7rem;
+            width: .40rem;
+            opacity: 0;
+            transition-delay: .7s + .5 * 2;
+        }
+    }
+    
+    // .active激活开始运动
+    &.active {
+        // 标题
+        .t-1 {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        .t-2-box {
+            opacity: 1;
+            animation: bounce 1s 1 .3s;
+        }
+        .t-3-box {
+            opacity: 1;
+            animation: bounce 1s 1 1s;
+        }
+        // 人物
+        .person-box {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        // 镖旗
+        .f {
+            opacity: 1;
+            animation: floatUpDown 3s infinite 0.8s;
+        }
+    }
+}

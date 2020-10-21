@@ -39,6 +39,8 @@ build/Release
 
 # Dependency directories
 node_modules/
+myCard01/node_modules/
+myCard02/node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files

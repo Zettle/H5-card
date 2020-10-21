@@ -1,0 +1,168 @@
+.page-4 {
+    img {
+        position: absolute;
+    }
+    // 标题
+    .title-warp {
+        position: absolute;
+        left: 50%;
+        top: 1rem;
+        width: 6.59rem;
+        transform: translate3d(-50%, 0, 0);
+        .t-box {
+            position: static;
+            width: 100%;
+        }
+        .t-1 {
+            top: .7rem;
+            left: .9rem;
+            width: 4.49rem;
+        }
+        .t-2 {
+            bottom: 1rem;
+            left: 1rem;
+            width: 5.02rem;
+        }
+    }
+    .t-text {
+        position: absolute;
+        top: .3rem;
+        left: .3rem;
+        span {
+            position: absolute;
+            color: #000;
+            font-size: 0;
+            background-image: url('../img/4/sprite.png');
+            background-repeat: no-repeat;
+            background-size: 3.33rem auto;
+            transform: rotateY(90deg);
+        }
+        // 无中间步骤一键贷款
+        .wu {
+            left: .65rem;
+            top: .6rem;
+            width: .85rem;
+            height: .87rem;
+            background-position: -2.48rem 0;
+            transition-delay: .1s * 1;
+        }
+        .zhong {
+            left: 1.6rem;
+            top: .5rem;
+            width: .77rem;
+            height: .87rem;
+            background-position: -1.09rem -2.37rem;
+            transition-delay: .1s * 2;
+        }
+        .jian {
+            left: 2.5rem;
+            top: 0.5rem;        
+            width: .79rem;
+            height: .87rem;
+            background-position: 0 -2.37rem;
+            transition-delay: .1s * 3;
+        }
+        .bu {
+            left: 3.4rem;
+            top: .4rem;
+            width: .83rem;
+            height: .89rem;
+            background-position: -2.48rem -1.17rem;
+            transition-delay: .1s * 4;
+        }
+        .zhou {
+            left: 4.2rem;
+            top: .3rem;
+            width: .98rem;
+            height: .86rem;
+            background-position: 0 0;
+            transition-delay: .1s * 5;
+        }
+        .yi {
+            left: .7rem;
+            top: 2rem;
+            width: .84rem;
+            height: .24rem;
+            background-position: -2.16rem -2.37rem;
+            transition-delay: .1s * 6;
+        }
+        .jian-2 {
+            left: 1.6rem;
+            top: 1.7rem;
+            width: .9rem;
+            height: .88rem;
+            background-position: -1.28rem 0;
+            transition-delay: .1s * 7;
+        }
+        .dai {
+            left: 2.5rem;
+            top: 1.6rem;
+            width: .88rem;
+            height: .91rem;
+            background-position: 0 -1.16rem;
+            transition-delay: .1s * 8;
+        }
+        .kuan {
+            left: 3.4rem;
+            top: 1.5rem;
+            width: .88rem;
+            height: .88rem;
+            background-position: -1.28rem -1.18rem;
+            transition-delay: .1s * 9;
+        }
+    }
+    // 人物
+    .p-warp {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate3d(0, 100%, 0);
+        transform-origin: right bottom;
+        .p {
+            display: block;
+            position: static;
+            width: 5.88rem;
+        }
+        .p-con {
+            right: .5rem;
+            top: 1.77rem;
+            width: 5.02rem;
+            transform: translate3d(100%, -70% , 0);
+            opacity: 0;
+            transition-delay: 1s;
+        }
+    }
+    .dot-1 {
+        left: 1.2rem;
+        bottom: 6rem;
+        width: .53rem;
+    }
+    .dot-2 {
+        left: 2.4rem;
+        bottom: 1.3rem;
+        width: .4rem;
+    }
+    .ticket {
+        left: .7rem;
+        bottom: 2.1rem;
+        width: 1.4rem;
+    }
+    // .active激活动画
+    &.active {
+        .t-text {
+            span {
+                transform: rotateY(0);
+            }
+        }
+        .ticket {
+            animation: floatUpDown 3s infinite;
+        }
+        .p-warp {
+            transform: translate3d(0, 0, 0);
+            .p-con {
+                transform: translate3d(0, 0 , 0);
+                opacity: 1;
+            }
+        }
+    }
+}

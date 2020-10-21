@@ -1,0 +1,73 @@
+.page-5 {
+    img {
+        position: absolute;
+    }
+    // 标题
+    .title-warp {
+        position: absolute;
+        top: .6rem;
+        left: .4rem;
+        width: 6.59rem;
+        opacity: 0;
+        .t-box {
+            position: static;
+            width: 100%;
+        }
+        .t-1 {
+            left: .5rem;
+            top: .4rem;
+            width: 5.33rem;
+        }
+        .t-2 {
+            left: .6rem;
+            bottom: .5rem;
+            width: 3.72rem;
+        }
+    }
+    // 单独的旗帜
+    .f-w {
+        position: absolute;
+        bottom: 6.1rem;
+        left: 1rem;
+        width: .8rem;
+    }
+    // 旗帜
+    .flag-warp {
+        position: absolute;
+        right: 2.5rem;
+        bottom: 1.7rem;    
+        opacity: 1 !important;
+        .f {
+            position: static;
+            width: .77rem;
+        }
+        .f-1 {
+            bottom: 0;
+            right: 0;
+            width: .87rem;
+            z-index: 1;
+        }
+        .f-2 {
+            bottom: .1rem;
+            right: -.2rem;
+            width: .75rem;
+        }
+    }
+    // 任务
+    .p {
+        left: .9rem;
+        bottom: 1.3rem;
+        width: 5.83rem;
+        transform: scale(0) translate3d(-100%, 0, 0);
+    }
+    // .active 激活动画
+    &.active {
+        .title-warp {
+            opacity: 1;
+            animation: swing 1s ease 0.2s;
+        }
+        .p {
+            transform: scale(1) translate3d(0, 0, 0);
+        }
+    }
+}

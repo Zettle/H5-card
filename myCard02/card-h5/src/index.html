@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="format-detection" content="telephone=no, email=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 是否启用 WebApp 全屏模式 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<!-- 添加到主屏后的标题（iOS 6 新增） -->
+<meta name="apple-mobile-web-app-title" content="线上化">
+<!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<meta name="format-detection" content="telephone=no, email=no">
+<!-- 启用360浏览器的极速模式(webkit) -->
+<meta name="renderer" content="webkit">
+<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+<meta name="HandheldFriendly" content="true">
+<!-- uc强制竖屏 -->
+<meta name="screen-orientation" content="portrait">
+<!-- QQ强制竖屏 -->
+<meta name="x5-orientation" content="portrait">
+<!-- UC强制全屏 -->
+<meta name="full-screen" content="yes">
+<!-- QQ强制全屏 -->
+<meta name="x5-fullscreen" content="true">
+<!-- UC应用模式 -->
+<meta name="browsermode" content="application">
+<!-- QQ应用模式 -->
+<meta name="x5-page-mode" content="app">
+<!-- windows phone 点击无高光 -->
+<meta name="msapplication-tap-highlight" content="no">
+<title>线上化</title>
+<!-- <script src="https://www.w3cways.com/demo/vconsole/vconsole.min.js"></script> -->
+<script>
+/**
+ * 设置html的fontSize
+ *  1.设计师给的都是750px的尺寸，iphone6的375px为蓝本
+ *  2.根据真实手机屏幕宽度计算得出应该设置的fontSize：winWidth / 750 * 100
+ *    为了方便写css，比如量出的是100px，我们就写1rem
+ *    浏览器最小字体是12px，所以乘以100避免这种情况
+ *  3.window监听窗口改变，300ms后执行
+ */
+ (function () {
+    var timer = null;
+    function refreshRem () {
+        var docEle = document.documentElement;
+        var winWidth = docEle.getBoundingClientRect().width;
+        winWidth = winWidth > 750 ? 750 : winWidth;
+        docEle.style.fontSize = winWidth / 750 * 100 + 'px';
+    }
+    refreshRem();
+    window.addEventListener('resize', function () {
+        clearTimeout(timer);
+        timer = setTimeout(refreshRem, 300);
+    }, false);
+})();
+</script>
+<link rel="stylesheet" href="./css/loading.css" />
+</head>
+<body>
+
+<!-- 优先展示loading -->
+<div id="loading" class="loading-warp">
+    <div class="progress flex direction-column align-center">
+        <img class="loading-img" src="./img/loading/loading.gif" />
+        <!-- <div class="loading-box">
+            <div id="loading-process" class="loading-process"></div>
+        </div> -->
+        <p id="loading-text" class="loading-text">0%</p>
+    </div>
+</div>
+
+<!-- 每个页面主要内容，有ajax读取page/page.html插入 -->
+<div id="main-page" class="main-page"></div>
+
+<template id="preload-css-img" style="display:none">
+    <img src="./img/music-play.png" />
+    <img src="./img/music-stop.png" />
+</template>
+<script src="./js/lib/zepto.min.js"></script>
+<script src="./js/lib/jweixin-1.4.0.js"></script>
+<script src="./js/index.js?r=15"></script>
+</body>
+</html>

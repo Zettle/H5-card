@@ -1,0 +1,76 @@
+.page-1 {
+   // 标题
+    .title-warp {
+        position: absolute;
+        top: 1.1rem;
+        left: 50%;
+        z-index: 2;
+        width: 6.6rem;
+        transform: translate3d(-150%, 0, 0);
+        opacity: 0;
+        img {
+            position: absolute;
+        }
+        .box {
+            position: static;
+            width: 100%;
+        }
+        .title-1 {
+            left: .2rem;
+            top: .9rem;
+            width: 5.95rem;
+        }
+        .title-2 {
+            top: .2rem;
+            right: 1.1rem;
+            width: 2.15rem;
+            transform: scale(0);
+            // transition-timing-function: cubic-bezier(0, 2, .83, .5);
+            // transition-duration: 2s;
+            // transition-delay: 1s;
+        }
+    }
+    // 旗帜
+    .flag-warp {
+        position: absolute;
+        bottom: 2.4rem;
+        opacity: 0;
+        .flag-1 {
+            position: absolute;
+            left: 1.1rem;
+            width: .77rem;
+            z-index: 1;
+        }
+        .flag-2 {
+            position: absolute;
+            left: 1.5rem;
+            width: .65rem;
+        }
+    }
+   // 中间人物建筑
+    .person {
+        width: 6.1rem;
+        position: absolute;
+        bottom: 1.2rem;
+        left: 50%;
+        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+    }
+    /* 加个.active后开始动画 */
+    &.active {
+        .title-warp {
+            transform: translate3d(-50%, 0, 0);
+            opacity: 1;
+        }
+        // 上线啦
+        .title-2 {
+            transition-timing-function: cubic-bezier(0, 2, .83, .5);
+            transition-delay: .8s;
+            transform: scale(1);
+        }
+        .person {
+            transform: translate3d(-50%, 0, 0);
+            opacity: 1;
+        }
+    }
+}

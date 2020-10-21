@@ -1,0 +1,36 @@
+@import './global.less';
+.loading-warp {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: .28rem;
+    background: url('../img/page-bg.png');
+    background-size: 100% 100%;
+    color: red;
+    text-align: center;
+    padding-top: 40%;
+    .loading-img {
+        position: static;
+        width: 6rem;
+    }
+    // 进度百分比
+    .loading-text {
+        width: 1.12rem;
+    }
+    // 进度条-外壳边框
+    .loading-box {
+        width: 5.6rem;
+        height: .24rem;
+        margin: .2rem 0;
+        background-size: 100% 100%;
+    }
+    // 进度条-内部柱状条
+    .loading-process {
+        width: 0;
+        height: 100%;
+        background-color: red;
+        background-size: 100% 100%;
+        border-radius: .24rem;
+        transition: width .3s linear;
+    }
+}

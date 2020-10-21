@@ -1,0 +1,65 @@
+.page-2 {
+    .title-warp {
+        position: absolute;
+        top: 1.1rem;
+        left: 50%;
+        width: 6.6rem;
+        transform: scale(0) translateX(-50%);
+        transform-origin: left center;
+        img {
+            position: absolute;
+        }
+        .box {
+            position: static;
+            width: 100%;
+        }
+        .title-1 {
+            top: 1.4rem;
+            left: .6rem;
+            width: 5.6rem;
+        } 
+        .title-2 {
+            bottom: .5rem;
+            left: .7rem;
+            width: 4.74rem;
+        }
+        .title-3 {
+            top: .5rem;
+            left: .5rem;
+            width: 4rem;
+        }
+    }
+    // 镖旗
+    .flag-warp {
+        position: absolute;
+        left: 1.1rem;
+        bottom: 5.4rem;
+        z-index: 2;
+        img {
+            position: absolute;
+        }
+        img:first-child {
+            width: .77rem;
+            z-index: 2;
+        }
+        img:last-child {
+            left: .3rem;
+            top: 0;
+            width: .65rem;
+        }
+    }
+    .person {
+        position: absolute;
+        left: 50%;
+        bottom: 1.7rem;
+        width: 6.18rem;
+        transform: translate3d(-50%, 0, 0);
+    }
+    // 加active激活动画
+    &.active {
+        .title-warp {
+            transition-timing-function: cubic-bezier(0, 2, .83, .5);
+            transform: scale(1) translateX(-50%);
+        }
+    }
+}
