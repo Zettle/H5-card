@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="https://cdn.bootcdn.net/ajax/libs/fullPage.js/3.0.9/fullpage.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="fullpage">
+    <div class="section">Some section1</div>
+    <div class="section">Some section2</div>
+    <div class="section">Some section3</div>
+    <div class="section">Some section4</div>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/fullPage.js/3.0.9/fullpage.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('#fullpage').fullpage({
+        sectionsColor : ['#1bbc9b', '#4BBFC3', '#7BAABE','#ccddff'],
+        onLeave: function(origin){ // 第1个参数是前置section的数据，第2个参数是后置section的数据
+            console.log('onLeave', origin.index);
+        },
+	    afterLoad: function(origin, destination){ // 第1个参数是前置section的数据，第2个参数是后置section的数据
+            console.log('afterLoad', destination.index);
+        },
+    });
+});
+</script>
+</body>
+</html>

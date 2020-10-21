@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="./lib/fullpage-3.0.9/fullpage.min.css" rel="stylesheet">
+<style>
+.component {
+    width: 50%;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: rebeccapurple;
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<div id="h5">
+    <div class="page" id="page-1">
+        Some page1
+        <div class="component logo">logo</div>
+        <div class="component slogan">slogan</div>
+    </div>
+    <div class="page" id="page-2">
+        Some page2
+        <div class="component desc">desc</div>
+    </div>
+    <div class="page" id="page-3">
+        Some page3
+        <div class="component bar">bar</div>
+    </div>
+    <div class="page" id="page-4">
+        Some page4
+        <div class="component pie">pie</div>
+    </div>
+</div>
+
+<script src="./lib/jquery-3.5.1/jquery.min.js"></script>
+<script src="./lib/fullpage-3.0.9/fullpage.min.js"></script>
+<script>
+$(document).ready(function() {
+    // 要先执行监听
+    $('.page').on('onLoad', function () {
+        $(this).find('.component').trigger('onLoad');
+    });
+    $('.page').on('onLeave', function () {
+        $(this).find('.component').trigger('onLeave');
+    });
+
+    $('.component').on('onLoad', function () {
+        $(this).fadeIn();
+        return false; // 阻止下冒泡，否则会一直冒到父级`div.page`又触发了`div.page`的onLoad
+    });
+    $('.component').on('onLeave', function () {
+        $(this).fadeOut();
+        return false;  // 阻止下冒泡，否则会一直冒到父级`div.page`又触发了`div.page`的onLoad
+    });
+
+	$('#h5').fullpage({
+        sectionSelector: '.page',
+        sectionsColor : ['#1bbc9b', '#4BBFC3', '#7BAABE','#ccddff'],
+        onLeave: function(origin){ // 第1个参数是前置section的数据，第2个参数是后置section的数据
+            // 再执行触发
+            $('#h5').find('.page').eq(origin.index).trigger('onLeave');
+        },
+	    afterLoad: function(origin, destination){ // 第1个参数是前置section的数据，第2个参数是后置section的数据
+            $('#h5').find('.page').eq(destination.index).trigger('onLoad');
+        },
+    });
+});
+</script>
+</body>
+</html>

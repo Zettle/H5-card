@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+* { margin: 0; padding: 0; }
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script src="./lib/jquery-3.5.1/jquery.min.js"></script>
+<script>
+// H5ComponentBase.js 功能
+/**
+ * @cfg type   是什么类型的div，本质会加到div的class上面
+ * @cfg name   给改div起什么名字，本质会加到div的class上面
+ * @cfg text   div里面的文字
+ * @cfg width  div的宽度
+ * @cfg height div的高度
+ * @cfg bg     div的背景图
+ * @cfg center 是否水平居中，设为true表示要水平居中
+ */
+var H5ComponentBase = function (cfg) {
+    var cfg = cfg || {};
+    var component = $('<div></div>');
+    return component;
+};
+</script>
+<script>
+var newDom = H5ComponentBase({});
+$('#app').append(newDom);
+</script>
+</body>
+</html>
