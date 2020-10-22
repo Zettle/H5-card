@@ -1,0 +1,18 @@
+html, body, div {
+    margin: 0;
+    padding: 0;
+}
+
+.h5 {
+    display: none;
+}
+.h5_page {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.h5_component { 
+    position: absolute; 
+    background-size: contain; 
+    background-repeat: no-repeat;
+}

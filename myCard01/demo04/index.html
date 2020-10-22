@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo04</title>
+<link href="../lib/fullpage-3.0.9/fullpage.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./h5.css">
+</head>
+<body>
+
+<script src="../lib/jquery-3.5.1/jquery.min.js"></script>
+<script src="../lib/fullpage-3.0.9/fullpage.min.js"></script>
+<script src="./h5.js"></script>
+<script src="./h5-component.js"></script>
+<script>
+var box = new H5();
+
+box
+    .addPage('face')
+        .addComponent('logo', {
+            text: 'logo', 
+            css: { top: -40, opacity:0, backgroundColor: 'red', width: 100, height: 60},
+            animateIn: { opacity: 1, top: 40 },
+            animateOut: { opacity: 0, top: -40 }
+        })
+        .addComponent('slogan', {text: 'slogan'})
+    .addPage('desc')
+        .addComponent('desc', {
+            text: '核心理念页',
+            css: { right: -40, opacity:0, backgroundColor: 'blue', width: 100, height: 60},
+            animateIn: { opacity: 1, right: 40 },
+            animateOut: { opacity: 0, right: -40 }
+        })
+    .load(); // 开始启动
+</script>
+</body>
+</html>

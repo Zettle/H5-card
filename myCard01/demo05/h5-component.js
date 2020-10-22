@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
-<style>
-* { margin: 0; padding: 0; }
-/* 所有的通用样式 */
-.h5_component { position: absolute; background-size: contain; background-repeat: no-repeat;}
-</style>
-</head>
-<body>
-
-<div id="app"></div>
-<br>
-<br>
-<br>
-<button class="btn">toggle</button>
-
-<script src="./lib/jquery-3.5.1/jquery.min.js"></script>
-<script>
-// H5ComponentBase.js 功能
 /**
  * @cfg type   是什么类型的div，本质会加到div的class上面
  *             比如 base-基本  pie-饼图  bar-柱状图
@@ -31,13 +8,12 @@
  * @cfg bg     div的背景图
  * @cfg center 是否水平居中，设为true表示要水平居中
  */
-var H5ComponentBase = function (cfg) {
+var H5ComponentBase = function (name, cfg) {
     var cfg = cfg || {};
     // 随机生成一个id，因为Math.random()生成的是小数，所以用replace把小数点替换为_，让格式看上去好看点
     var id = `h5_c_${Math.random()}`.replace('.', '_');
-    var clsName = `h5_component h5_component_${cfg.type} h5_component_name_${cfg.name}`;
+    var clsName = `h5_component h5_component_${cfg.type} h5_component_name_${name}`;
     var component = $(`<div class="${clsName}" id="${id}"></div>`);
-
     cfg.text && component.text(cfg.text);
 
     // 设计师给的是2倍图，所以在这里先除好，在外界就不需要每次去除，直接在设计稿量了多少，就传递进来多少
@@ -66,30 +42,44 @@ var H5ComponentBase = function (cfg) {
     });
     return component;
 };
-</script>
-<script>
-var newDom = H5ComponentBase({
-    type: 'base',
-    name: 'myName',
-    text: '文字内容',
-    width: 515,
-    height: 305,
-    bg: './imgs/p1_people.png',
-    center: true,
-    css: {
-        opacity: 0,
-        bottom: -40
-    },
-    animateIn: { opacity: 1, bottom: 40 },
-    animateOut: { opacity: 0, bottom: -40 },
-});
-$('#app').append(newDom);
 
-var isLoad = true;
-$('.btn').click(function () {
-    newDom.trigger(isLoad ? 'load' : 'leave'); // 触发 .h5_component 的自定义监听
-    isLoad = !isLoad;
-});
-</script>
-</body>
-</html>
+/**
+ * 散点图
+ * @param {*} name 
+ * @param {*} cfg 配置项，同上面的 H5ComponentBase
+ */
+var H5ComponentPoint = function (name, cfg) {
+    var cfg = cfg || {};
+    cfg.type = 'point';
+
+    var component = new H5ComponentBase(name, cfg);
+
+    var basePoint = cfg.data[0]; // 基点
+    // 遍历数据
+    $.each(cfg.data, function (idx, item) {
+        console.log(idx, item);
+        var per = `${item[1] / basePoint[1] * 100}%`;
+
+        var clsName = `point`;
+        var point = $(`<div class="${clsName}" id="point_${idx}"></div>`);
+        point.html(`
+            <div class="point_text">
+                <p class="name">${item[0]}</p>
+                <p class="per">${per}</p>
+            </div>
+        `);
+        point.css({
+            backgroundColor: item[2],
+            width: per,
+            height: per,
+        });
+        if (item[3] !== undefined && item[4] !== undefined) {
+            point.css({
+                left: item[3],
+                top: item[4]
+            });
+        }
+        component.append(point);
+    });
+    return component;
+}

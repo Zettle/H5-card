@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo05</title>
+<link rel="stylesheet" href="./h5.css">
+
+</head>
+<body>
+
+<script src="../lib/jquery-3.5.1/jquery.min.js"></script>
+<script src="./h5-component.js"></script>
+<script>
+var h5 = H5ComponentPoint('point', {
+    width: 300,
+    height: 300,
+    data: [
+        [ '文本AA', 0.4, 'red' ],
+        [ '文本BB', 0.2, 'blue', 0, '-50%' ],
+        [ '文本CC', 0.2, 'green', 0, '100%' ]
+    ],
+    css: {
+        bottom: '40%',
+        opacity: 1
+    },
+    center: true
+});
+
+$('body').prepend(h5);
+</script>
+</body>
+</html>
