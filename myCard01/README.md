@@ -94,6 +94,31 @@ var data = [
 3. 第2个散点图的大小定义: 第2个三点图数据是0.2，占全部的`0.2/0.4 = 50%`。所以大小就定位基点图的50%即可
 
 
+## demo06.html
+柱状图的实现
+
+每个柱状条的数据结构`[ '文本AA', 0.4, '#ff7676' ]`。
+- 第1个参数是文案
+- 第2个参数是宽度的百分比
+- 第3个参数是颜色
+
+每个柱状图的html结构如下:
+```html
+<div class="line">
+    <div class="name">文本AA</div>
+    <div class="process">
+        <div class="bg"></div>
+    </div>
+    <div class="per">40%</div>
+</div>
+```
+中间的柱状包含2个
+```html
+<div class="process">
+    <div class="bg"></div>
+</div>
+```
+`.process` 的宽度等于外界传递进来的，然后保持不动。`.bg` 的宽度从0到100%变化，就可以看出柱状的变化，而百分比数字又保持不变
 
 
 ## 原理
