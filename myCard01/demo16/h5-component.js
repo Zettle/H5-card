@@ -399,15 +399,6 @@ var H5ComponentPie = function (name, cfg) {
     ctx.arc(r, r, r, 0, 2 * Math.PI);
     ctx.fill();
 
-    // 绘画数据层，先模拟绘画一个
-    // var sAngel = 1.5 * Math.PI; // 开始角度，12点的位置
-    // var eAngel = 0; // 结束角度，3点的位置
-    // var aAngel = 2 * Math.PI; // 完整圆角度，即360°
-    // ctx2.beginPath();
-    // ctx2.moveTo(r, r);
-    // ctx2.arc(r, r, r, sAngel, eAngel);
-    // ctx2.fill();
-
     var sAngel = 1.5 * Math.PI; // 开始角度，12点的位置
     var eAngel = 0; // 结束角度，3点的位置
     var aAngel = 2 * Math.PI; // 完整圆角度，即360°
@@ -421,6 +412,29 @@ var H5ComponentPie = function (name, cfg) {
         ctx2.fill();
 
         sAngel = eAngel; // 将上一次的结束位置赋值给下一次的起始位置
+
+        // 添加文字
+        var txt = $(`
+            <div class="label">
+                <p>${item[0]}</p>
+                <p class="per">${item[1] * 100}%</p>
+            </div>
+        `);
+
+        var x = r + Math.sin(0.5 * Math.PI - sAngel) * r; 
+        var y = r + Math.cos(0.5 * Math.PI - sAngel) * r; 
+        if (x > cfg.width/2) {
+            txt.css({ left: x/2 });
+        } else {
+            txt.css({ right: (cfg.width-x)/2 });
+        }
+        if (y > cfg.height/2) {
+            txt.css({ top: y/2 });
+        } else {
+            txt.css({ bottom: (cfg.height-y)/2 });
+        }
+        txt.css({ transition: `all 1s ${0.3 * i}s`, opacity: 0});
+        component.append(txt);
     }
 
     var draw = function (per) {
@@ -446,11 +460,15 @@ var H5ComponentPie = function (name, cfg) {
             setTimeout(function () {
                 s += 0.01;
                 draw(s);
+                if (s>=1) {
+                    component.find('.label').css({ opacity: 1 });
+                }
             }, i*10+500);
         }
     });
     component.on('leave', function () {
         var s = 1;
+        component.find('.label').css({ opacity: 0 });
         for (var i=0; i<100; i++) {
             setTimeout(function () {
                 s-=0.01;
