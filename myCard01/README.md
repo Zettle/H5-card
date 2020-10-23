@@ -138,18 +138,28 @@ var data = [
 1. 绘画多个雷达图五边框，越往里面半径越小，分为10份，这样比较方便后面计算点的位置
 
 
+## demo11.html
+在 demo10.html 的基础上，再绘画伞骨
 
-## 原理
-总体html结构
-```html
-<div class="h5">
-    <div class="h5_page">
-        <div class="h5_component"></div>
-        <div class="h5_component"></div>
-    </div>
 
-    <div class="h5_page">
-        <div class="h5_component"></div>
-    </div>
-</div>
-```
+## demo12.html
+完整的雷达图demo
+
+
+## demo13.html
+绘画饼图，角度的计算公式如下:
+
+![](./readmeImg/angle.png)
+
+
+## demo14.html
+1. 数据结构: `[文字,占比,饼的背景色]`
+2. 把整个圆按照数据分为几块，整个圆是`2*Math.PI`。那么每个饼图的大小就是第2个参数`N * 2 * Math.PI`
+3. 每次绘画饼的时候，开始角度是上一饼的结束角度。即`sAngle = eAngle`即可
+
+
+## demo15.html
+1. 饼图的动画效果，再建立一个canvas来做动画，这个canvas就动效得去绘画圆，然后展示出下面的数据即可
+
+## demo16.html
+完整的饼图效果
