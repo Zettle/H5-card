@@ -1,0 +1,41 @@
+.h5_page {
+    background: url('./imgs/page_bg.png') no-repeat;
+}
+.h5_page_name_face {
+    background: url('./imgs/face_bg.png') no-repeat;
+}
+/* 屏1的抖动 */
+.h5_component_name_slogan {
+    animation: rock 2s infinite 2s;
+}
+@keyframes rock {
+    0% { transform: rotate(0deg); }
+    5% { transform: rotate(3deg); }
+    10% { transform: rotate(-4deg); }
+    15% { transform: rotate(3deg); }
+    20% { transform: rotate(-2deg); }
+    25% { transform: rotate(1deg); }
+    30% { transform: rotate(-1deg); }
+    70% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+.h5_component_name_caption {
+    width: 283px;
+    height: 160px;
+    text-align: center;
+    line-height: 140px;
+    font-size: 20px;
+    color: #fff;
+    background: url('./imgs/page_caption_bg.png') no-repeat center center;
+    background-size: contain;
+    top: 0;
+}
+.h5_component_name_back {
+    top: 30px;
+    animation: back 2s infinite 2s;
+}
+@keyframes back {
+    from { top: 30px }
+    50% { top: 20px }
+    to { top: 30px }
+}
