@@ -1,0 +1,93 @@
+.page-6 {
+    background-image: url(../img/s5/bg_36f6e13.png);
+    .warpper {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        width: 62%;
+        transform: translateX(-50%);
+        img {
+            position: absolute;
+        }
+        .item {
+            transition: all 1.2s ease-in-out;
+        }
+        .s0 {
+            position: static;
+            width: 100%;
+        }
+        .s1 {
+            width: 4.48rem;
+            bottom: -.42rem;
+            left: 50%;
+            transform: translate(-50%, -20%);
+        }
+        .s2 {
+            width: 77%;
+            top: -2%;
+            left: 22%;
+        }
+        .s3 {
+            width: 75.5%;
+            top: -8%;
+            left: -1%;
+        }
+        .s4 {
+            width: 3.164rem;
+            top: 37%;
+            left: 32%;
+            transform: translate3d(-1.4rem, 0, 0);
+            opacity: .1;
+        }
+        .s5 {
+            width: 2.94rem;
+            top: -8.5%;
+            left: 19%;
+            transform: translate3d(-1.4rem, 0, 0);
+            opacity: .1;
+        }
+        .s6 {
+            width: 2.8rem;
+            bottom: 4%;
+            left: 30%;
+            transform: translate3d(-1.4rem, 0, 0);
+            opacity: .1;
+        }
+        .s7 {
+            width: 2.94rem;
+            top: 15%;
+            left: 0;
+            transform: translate3d(1.4rem, 0, 0);
+            opacity: .1;
+        }
+        .s8 {
+            width: 2.184rem;
+            top: 51%;
+            left: 0;
+            transform: translate3d(1.4rem, 0, 0);
+            opacity: .1;
+        }
+        .s9 {
+            width: 80%;
+            top: 9.5%;
+            left: 9.5%;
+            z-index: -1;
+            transition: transform 1.8s linear;
+        }
+        .s10 {
+            width: 92%;
+            top: 3.6%;
+            left: 3.6%;
+        }
+    }
+    // .active 激活运动
+    &.active {
+        .s9 {
+            transform: rotate(360deg * 2); // 转2圈
+        }
+        .item {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+}

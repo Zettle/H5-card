@@ -1,0 +1,34 @@
+@import './global.less';
+.loading-warp {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+    font-size: .28rem;
+    background: url('../img/s0/bg_3de7180.png') no-repeat;
+    background-size: 100% 100%;
+    // 进度百分比
+    .loading-text {
+        width: 1.12rem;
+        height: .8rem;
+        padding-top: .15rem;
+        background: url(../img/percent_8e46134.png) no-repeat;
+        background-size: contain;
+    }
+    // 进度条-外壳边框
+    .loading-box {
+        width: 5.6rem;
+        height: .24rem;
+        margin: .2rem 0;
+        background: url(../img/progress_dcf6da5.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    // 进度条-内部柱状条
+    .loading-process {
+        width: 0;
+        height: 100%;
+        background-color: #00fffc;
+        background-size: 100% 100%;
+        border-radius: .24rem;
+        transition: width .3s linear;
+    }
+}

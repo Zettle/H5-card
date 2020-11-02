@@ -1,0 +1,117 @@
+.page {
+    // 顶部标题
+    .title {
+        position: absolute;
+        top: 6%;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        h3 {
+            font-weight: normal;
+            font-size: .79rem;
+        }
+        p {
+            margin-top: .14rem;
+            font-size: .28rem;
+            opacity: .4;
+        }
+    }
+    // 单个标题
+    .title-single {
+        transition: all .7s ease;
+        transform: translate3d(0, -100%, 0);
+        opacity: 0;
+    }
+    // 2个标题
+    .title-1 {
+        transform: translate(100%,0);
+        opacity: 0;
+    }
+    .title-2 {
+        opacity: 0;
+        transition: opacity .7s ease 1.8s;
+    }
+    
+    // 镖旗
+    .left-bar {
+        position: absolute;
+        left: 0;
+        bottom: 2.52rem;
+        height: .44rem;
+        padding: 0 .16rem 0 .34rem;
+        font-size: .28rem;
+        color: #fff;
+        background-color: #49c0ff;
+        transform: translate3d(-110%, 0, 0);
+        opacity: 0;
+        transition: all 0.7s ease;
+        &:after {
+            content: '';
+            position: absolute;
+            right: -.22rem; // content的border宽度 + 父级padding-right的值
+            top: 0;
+            width: 0;
+            height: 0;
+            border: .22rem #49c0ff solid;
+            border-right-color: transparent !important;
+            border-left-width: 0;
+        }
+        // 颜色
+        &.purple-bg {
+            background-color: #ae78ff;
+            &:after {
+                border-color: #ae78ff;
+            }
+        }
+        &.yellow-bg {
+            background-color: #f1c90f;
+            &:after {
+                border-color: #f1c90f;
+            }
+        }
+        &.pink-bg {
+            background-color: #ff818a;
+            &:after {
+                border-color: #ff818a;
+            }
+        }
+    }
+
+    
+    // 底部的文字
+    .tips {
+        position: absolute;
+        left: 0;
+        bottom: 1.5rem;
+        width: 100%;
+        color: #fff;
+        font-size: .3rem;
+        text-align: center;
+        transform: translate3d(50%, 0, 0);
+        opacity: 0;
+        transition: all 0.7s ease;
+        p:first-child {
+            margin-bottom: .1rem;
+        }
+    }
+    &.active {
+        // 当个标题
+        .title-single {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        // 标题1
+        .title-1 {
+            animation: an-s2-title 3s ease;
+        }
+        // 标题2
+        .title-2 {
+            opacity: 1;
+        }
+        .left-bar,
+        .tips {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+}

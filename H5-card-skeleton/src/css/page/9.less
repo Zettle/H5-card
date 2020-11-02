@@ -1,0 +1,72 @@
+.page-9 {
+    background-image: url('../img/s9/bg_9e45155.png');
+    .title-1 {
+        animation-name: an-s9-title !important;
+    }
+    .warpper {
+        position: absolute;
+        top: 22%;
+        left: 50%;
+        width: 67%;
+        transform: translateX(-50%);
+        img {
+            position: absolute;
+        }
+        .s0 {
+            position: static;
+            width: 100%;
+        }
+        .s1 {
+            width: 4.48rem;
+            bottom: -.39rem;
+            left: 50%;
+            transform: translate(-50%, -20%);
+        }
+        .s2 {
+            width: 111%;
+            top: -3%;
+            left: -9.5%;
+            transform: translate3d(10%, 0, 0);
+            opacity: .5;
+            transition: all .7s ease;
+        }
+        .s3 {
+            width: 89.5%;
+            top: -4%;
+            left: 16%;
+            z-index: 1;
+            transform: translate3d(-10%, 0, 0);
+            opacity: .5;
+            transition: all .4s ease;
+        }
+        .s4 {
+            width: 53%;
+            top: 32%;
+            left: -8%;
+            opacity: 0;
+        }
+        .s5 {
+            width: 68%;
+            top: -8%;
+            left: 20%;
+            transform: translate3d(-5.04rem, 5.04rem, 0);
+            opacity: .3;
+            transition: all 1.5s ease;
+        }
+    }
+
+    &.active {
+        .s2,
+        .s3 {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        .s4 {
+            animation: an-s9-fire 1s ease forwards;
+        }
+        .s5 {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+}

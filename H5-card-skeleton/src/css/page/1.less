@@ -1,0 +1,44 @@
+.page-1 {
+    background: url(../img/s0/bg_3de7180.png) no-repeat;
+    img {
+        position: absolute;
+    }
+    .s0 {
+        bottom: 0;
+        right: 0;
+        width: 5.6rem;
+    }
+    .s1 {
+        bottom: 1.4rem;
+        left: 50%;
+        width: 4.48rem;
+        transform: translate3d(-50%, 4rem, 0);
+        transition: transform .7s ease .3s;
+    }
+    .s2 {
+        top: .56rem;
+        left: .084rem;
+        width: 2.52rem;
+    }
+    .s3 {
+        top: 0;
+        left: 31%;
+        width: 2.52rem;
+    }
+    .s4 {
+        top: 2.24rem;
+        left: 50%;
+        width: 5.32rem;
+        transform: translate3d(-200%, 0, 0);
+        transition: transform .7s ease .3s;
+    }
+    /* 加个.active后开始动画 */
+    &.active {
+        .s1 {
+            transform: translate3d(-50%, 0, 0);
+        }
+        .s4 {
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+}

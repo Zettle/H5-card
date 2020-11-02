@@ -1,0 +1,71 @@
+.page-8 {
+    background-image: url(../img/s7/bg_e57e6b2.png);
+    .title-single {
+        transform: translate3d(-100%, 0, 0); // 覆盖掉默认的公共样式
+    }
+    .warpper {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        width: 64%;
+        transform: translateX(-50%);
+        img {
+            position: absolute;
+        }
+        .ball {
+            opacity: 0;
+            transform: scale(0,0);
+            transition: all .7s cubic-bezier(0,1.89,.83,.67) 1.7s;
+        }
+        .s0 {
+            width: 100%;
+            position: static;
+        }
+        .s1 {
+            width: 4.48rem;
+            bottom: -1.82rem;
+            left: 50%;
+            transform: translate(-50%, -20%);
+        }
+        .s2 {
+            width: 110%;
+            top: 4%;
+            left: -6%;
+            z-index: -1;
+        }
+        .s3 {
+            width: 97.5%;
+            top: -5%;
+            left: 4%;
+        }
+        .s4 {
+            width: 2.24rem;
+            top: 70%;
+            left: 64%;
+            z-index: 1;
+            transition-delay: 1.7s + .5; // 1.7是ball的延迟，0.5s是后面一个ball比前面一个ball的延迟
+        }
+        .s5 {
+            width: 1.4rem;
+            top: 27.5%;
+            right: -1%;
+            z-index: 1;
+        }
+        .s6 {
+            width: 4.2rem;
+            bottom: -21%;
+            left: 5%;
+            opacity: 0;
+        }
+    }
+
+    &.active {
+        .ball {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .s6 {
+            animation: an-s7-search 1.8s linear forwards;
+        }
+    }
+}

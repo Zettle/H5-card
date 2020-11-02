@@ -1,0 +1,80 @@
+.page-2 {
+    background: url(../img/s1/bg_97b8bdf.png) no-repeat;
+    .translate {
+        transition: all .7s ease;
+        opacity: 0;
+    }
+
+    // 中间看板
+    .wrapper {
+        position: absolute;
+        top: 31%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        .s0 { // 不设absolute，撑起父级容器
+            width: 100%;
+        }
+        .s1 {
+            position: absolute;
+            width: 100%;
+            bottom: -1.68rem;
+        }
+        .s2 {
+            position: absolute;
+            top: -.56rem;
+            left: .84rem;
+            width: 87%;
+        }
+        .s3 {
+            position: absolute;
+            top: -.98rem;
+            left: .56rem;
+            width: 87%;
+        }
+        .ball {
+            position: absolute;
+            transform: scale(.1);
+            transition: transform 1s cubic-bezier(0, 2, .83, .5) .3s;
+        }
+        .s4 {
+            width: 1.4rem;
+            bottom: -.75rem;
+            left: 15%;
+            transition-delay: .4s;
+        }
+        .s5 {
+            width: 1rem;
+            top: -.39rem;
+            left: 63%;
+            transition-delay: .6s;
+        }
+        .s6 {
+            width: 1.6rem;
+            top: -.67rem;
+            left: -6%;
+            transition-delay: .2s;
+        }
+        .s7 {
+            width: 2.12rem;
+            top: 44%;
+            left: 60%;
+        }
+        .s8 {
+            width: 1.17rem;
+            top: 36%;
+            left: -9%;
+            transition-delay: .5s;
+        }
+    }
+    // 加active激活动画
+    &.active {
+        .translate {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+        .ball {
+            transform: scale(1);
+        }
+    }
+}

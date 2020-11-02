@@ -1,0 +1,107 @@
+.page-3 {
+    background: url(../img/s2/bg_d69464b.png) no-repeat;
+
+    
+    // 中间看板
+    .warpper {
+        position: absolute;
+        width: 73%;
+        top: 35%;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            position: absolute;
+        }
+        .s0 {
+            width: 100%;
+            position: static;
+        }
+        .s1 {
+            width: 96%;
+            left: 50%;
+            bottom: 4%;
+            z-index: -10; // 要比那些系统.sys低
+            transform: translateX(-50%);
+        }
+        .s2 {
+            width: 80%;
+            bottom: -.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .s3 {
+            width: 83%;
+            top: -.98rem;
+            left: .56rem;
+        }
+        .s4 {
+            width: 86%;
+            top: -1.5rem;
+            left: 0.168rem;
+        }
+        .sys {
+            width: 2.184rem;
+            transition: all 1s cubic-bezier(0, 1.79, .83, .67);
+            transform: translate3d(0, -80%, 0);
+            opacity: 0;
+        }
+        .s5 {
+            top: -.3rem;
+            left: 43%;
+            z-index: -3;
+            transition-delay: .2s;
+        }
+        .s6 {
+            top: -1.14rem;
+            left: 38%;
+            z-index: -5;
+            transition-delay: .4s;
+        }
+        .s7 {
+            top: -.652rem;
+            left: 16%;
+            z-index: -4;
+            transition-delay: .3s;
+        }
+        .s8 {
+            top: .96rem;
+            left: 30%;
+            z-index: -1;
+        }
+        .s9 {
+            top: .2rem;
+            left: 13%;
+            z-index: -2;
+            transition-delay: .1s;
+        }
+        .s10 {
+            width: 3.668rem;
+            top: -.6rem;
+            left: 14%;
+            z-index: -1;
+            opacity: 0;
+            transition: all 1s ease-in;
+        }
+    }
+
+    // .active激活开始运动
+    &.active {
+        // 中间看板-系统
+        .sys {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+    &.step1 {
+        .sys {
+            top: -.2rem;
+            left: 29%;
+        }
+    }
+    &.step2 {
+        // background: red;
+        .s10 {
+            opacity: 1;
+        }
+    }
+}

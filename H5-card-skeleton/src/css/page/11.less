@@ -1,0 +1,37 @@
+.page-11 {
+    background-image: url('../img/s10/bg_a074928.png');
+    .title-single {
+        transform: translate3d(100%, 0, 0);
+    }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 90%;
+        height: 100%;
+        transform: translate(-50%, 0);
+    }
+    .warpper {
+        position: absolute;
+        width: 70%;
+        top: 56%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        .s0 {
+            width: 100%;
+        }
+        .s1 {
+            position: absolute;
+            top: 0;
+            left: 7%;
+            width: 2.184rem;
+            transform: translate(0,-600%);
+        }
+    }
+    &.active {
+        .s1 {
+            animation: an-s10-fire 2s ease;
+            animation-fill-mode: forwards;
+        }
+    }
+}

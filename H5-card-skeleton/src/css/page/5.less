@@ -1,0 +1,90 @@
+.page-5 {
+    background-image: url(../img/s4/bg_d69464b.png);
+    .warpper {
+        position: absolute;
+        width: 59%;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        img {
+            position: absolute;
+        }
+        .mobile {
+            transition: all .7s ease;
+        }
+        .screen {
+            transform: scale(0);
+            transition: transform .7s ease-in .8s;
+        }
+        .s0 {
+            position: static;
+            width: 100%;
+        }
+        .s1 {
+            width: 4.48rem;
+            bottom: -1.9rem;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        .s2 {
+            width: 120%;
+            top: -8%;
+            left: -8%;
+            z-index: -1;
+        }
+        .s3 {
+            width: 104%;
+            top: -18%;
+            left: -16%;
+        }
+        .s4 {
+            width: 87.5%;
+            top: 7.3%;
+            left: 5.9%;
+        }
+        .s5 {
+            width: 2.604rem;
+            top: 39%;
+            left: -13%;
+            z-index: 1;
+            transform: rotateY(-90deg) translate(-50%,0);
+        }
+        .s6 {
+            width: 2.1rem;
+            top: 48%;
+            left: -7%;
+            z-index: 2;
+        }
+        .s7 {
+            width: 1.484rem;
+            top: 69%;
+            right: -2%;
+            transform: rotateY(90deg) translate(50%, 0);
+        }
+        .s8 {
+            width: 1.03rem;
+            top: 77%;
+            left: 74%;
+        }
+        .s9 {
+            width: 2.296rem;
+            top: 96%;
+            left: 20%;
+            z-index: 3;
+        }
+        .s10 {
+            width: 1.6rem;
+            top: 27%;
+            left: 16%;
+        }
+    }
+    // .active 激活动画
+    &.active {
+        .mobile {
+            transform: rotateY(0) translate(0,0);
+        }
+        .screen {
+            transform: scale(1);
+        }
+    }
+}

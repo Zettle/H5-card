@@ -1,0 +1,77 @@
+.page-4 {
+    background: url(../img/s3/bg_d69464b.png) no-repeat;
+    // 中间看板
+    .warpper {
+        position: absolute;
+        top: 23%;
+        left: 50%;
+        width: 59%;
+        transform: translateX(-50%);
+        img {
+            position: absolute;
+            width: 100%;
+        }
+        .s0 {
+            position: static;
+        }
+        .s1 {
+            bottom: -.22rem;
+            left: 50%;
+            width: 4.48rem;
+            transform: translate(-50%,-20%);
+        }
+        .s2 {
+            top: 0;
+            left: -.56rem;
+            width: 115%;
+            z-index: -1;
+        }
+        .s3 {
+            top: -.22rem;
+            left: -.22rem;
+            width: 107%;
+            z-index: 1;
+        }
+        .s4 {
+            top: 0;
+            left: -12%;
+            width: 5.376rem;
+            z-index: -1;
+            transform: scale(.5);
+            transition: all .7s ease 1.5s;
+        }
+        .s5 {
+            top: -.33rem;
+            left: -13%;
+            width: 5.6rem;
+        }
+        .s6 {
+            top: .95rem;
+            right: 9%;
+            width: 1.12rem;
+            opacity: 0;
+        }
+        .s7 {
+            top: 1.512rem;
+            left: 1%;
+            width: 3.92rem;
+            transition: all .7s ease .5s;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+        }
+    }
+
+    // .active激活动画
+    &.active {
+        .s4 {
+            transform: scale(1);
+        }
+        .s6 {
+            animation: an-s3-flash 2.5s linear;
+            animation-fill-mode: forwards;
+        }
+        .s7 {
+            transform: rotateY(0);
+        }
+    }
+}

@@ -1,0 +1,97 @@
+@import './page/keyframes.less';
+@import './page/page-common.less';
+@import './page/1.less';
+@import './page/2.less';
+@import './page/3.less';
+@import './page/4.less';
+@import './page/5.less';
+@import './page/6.less';
+@import './page/7.less';
+@import './page/8.less';
+@import './page/9.less';
+@import './page/10.less';
+@import './page/11.less';
+
+.page {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    &.transition {
+        transition: all 0.5s ease-in-out;
+    }
+    &.active { // 控制动画开始
+    }
+    &.visible { // 控制是否可见的
+        // visibility: visible;
+        display: block;
+    }
+}
+
+// 页码
+.page-num {
+    position: absolute;
+    bottom: .28rem;
+    right: .28rem;
+    color: #fff;
+    font-size: .28rem;
+    opacity: .58;
+}
+
+// 向上的箭头
+.arrow-up {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    width: .56rem;
+    transform: translate3d(-50%, 30%, 0);
+    animation: upArrowAni 2s infinite linear;
+    opacity: .6;
+}
+@keyframes upArrowAni {
+    0% {
+        opacity: 0;
+        transform: translate3d(-50%, 30%, 0);
+    }
+    
+    30% {
+        opacity: .6;
+        transform: translate3d(-50%, -20%, 0);
+    }
+    60% {
+        opacity: 0;
+        transform: translate3d(-50%, -35%, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+// 音乐播放器
+.music {
+    position: absolute;
+    right: .28rem;
+    top: .28rem;
+    width: .84rem;
+    height: .84rem;
+    background-size: contain;
+    background-image: url(../img/music-stop_96207cf.png);
+    // 播放状态
+    &.play {
+        background-image: url(../img/music-open_ba0e382.png);
+        animation: music 3s linear infinite;
+    }
+    // 暂停状态
+    // &.paused {
+    //     background-image: url(../img/music-stop_96207cf.png);
+    // }
+}
+@keyframes music {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
