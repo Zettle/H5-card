@@ -1,4 +1,4 @@
-// // const ora = require('ora');
+// const ora = require('ora');
 const gulp = require('gulp');
 const es = require('event-stream');
 const htmlmin = require('gulp-htmlmin');

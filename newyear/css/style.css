@@ -1,0 +1,163 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+}
+
+/* 第1页 */
+#page1 {
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/page1_bg.png) center;
+  background-size: cover;
+}
+#page1 .page1-lantern {
+  width: 70px;
+  height: 61px;
+  background: url(../img/page1_lantern.png);
+  background-size: cover;
+  margin: 0 auto;
+}
+#page1 .page1-frame {
+  width: 200px;
+  height: 62px;
+  background: url(../img/page1_frame.png);
+  background-size: cover;
+  margin: 20px auto;
+  line-height: 62px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+#page1 .page1-text {
+  width: 100px;
+  height: 301px;
+  background: url(../img/page1_text.png);
+  background-size: cover;
+  margin: 0 auto;
+}
+#page1 .page1-fence {
+  width: 100vw;
+  height: 150px;
+  background: url(../img/page1_fence.png) center bottom;
+  background-size: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#page1 .page1-p1 {
+  position: absolute;
+  width: 92px;
+  height: 165px;
+  background: url(../img/page1_p1.png);
+  background-size: cover;
+  left: 50%;
+  top: -35px;
+  margin-left: -55px;
+  transform-origin: center bottom;
+  animation: 2s ease-in-out infinite prun -1s;
+}
+#page1 .page1-p2 {
+  position: absolute;
+  width: 135px;
+  height: 174px;
+  background: url("../img/page1_p2.png");
+  background-size: cover;
+  left: 5%;
+  top: -50px;
+  transform-origin: center bottom;
+  animation: 2s ease-in-out infinite prun -1.5s;
+}
+#page1 .page1-p3 {
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  background: url(../img/page1_p3.png);
+  background-size: cover;
+  right: 2%;
+  top: -30px;
+  transform-origin: center bottom;
+  animation: 2s ease-in-out infinite prun;
+}
+/* 几个人的动画效果 */
+@keyframes prun {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+#music {
+  width: 30px;
+  height: 30px;
+  background: url(../img/music_icon.png);
+  background-size: cover;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+#music.run {
+  animation: 2s linear infinite mrun;
+}
+@keyframes mrun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#page2 {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: #b82a1e;
+}
+#page3 {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+#page3 .page3-arrow {
+  width: 150px;
+  height: 150px;
+  background: url(../img/page3_arrow.png);
+  background-size: cover;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  transform: rotate(60deg);
+}
+#page3 .page3-rocket {
+  width: 60px;
+  height: 131px;
+  background: url(../img/page3_rocket.png);
+  background-size: cover;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#page3 p {
+  margin-top: 20px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
